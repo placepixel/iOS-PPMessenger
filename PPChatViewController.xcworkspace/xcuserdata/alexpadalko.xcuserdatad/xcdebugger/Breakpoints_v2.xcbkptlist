@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PPChatViewController/PPChatViewController/PPMessengerContentManager.m"
-            timestampString = "480642194.401902"
+            filePath = "PPChatViewController/BaseRealization/display/senderProfilePicture/PPMSenderProfilePictureView.m"
+            timestampString = "480651535.865166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-workWithNewItems:complititionBlock:"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-setSenderProfilePictureUrl:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,60 +42,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PPChatViewController/PPChatViewController/core/PPMessengerViewController.m"
-            timestampString = "480640176.489057"
+            timestampString = "480743827.4984"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "-collectionView:viewForSupplementaryElementOfKind:atIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PPChatViewController/PPChatViewController/core/content/PPMContentDisplayObject.m"
+            timestampString = "480742901.143127"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "-ppm_calculateInBackgroundOnSize:withY:andIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PPChatViewController/BaseRealization/display/messange/PPMMessageDisplayObject.m"
+            timestampString = "480743510.221173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
             endingLineNumber = "83"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[PPMessengerViewController viewDidLoad]_block_invoke"
-                  moduleName = "PPChatViewController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexpadalko/Projects/PPChatViewController/PPChatViewController/PPChatViewController/core/PPMessengerViewController.m"
-                  timestampString = "480640532.495075"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "55">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__40-[PPMessengerViewController viewDidLoad]_block_invoke_2"
-                  moduleName = "PPChatViewController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexpadalko/Projects/PPChatViewController/PPChatViewController/PPChatViewController/core/PPMessengerViewController.m"
-                  timestampString = "480640532.495279"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PPChatViewController/PPChatViewController/core/PPMessengerViewController.m"
-            timestampString = "480640255.529638"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "-ppmcm_getGroupClassForType:"
+            landmarkName = "-ppm_calculateContentSizeInBackgroundAvailableOnSize:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
