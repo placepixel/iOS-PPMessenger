@@ -21,7 +21,7 @@
 
 -(UIEdgeInsets)ppm_globalInsets{
     
-    return UIEdgeInsetsMake(5+28, 5, 5, 5);
+    return UIEdgeInsetsMake(30+5, 5, 5, 5);
 }
 -(UIEdgeInsets)ppm_contentInsets{
     return UIEdgeInsetsMake(0, 0, 0, 0);

@@ -17,4 +17,5 @@
 @end
 @interface PPMessengerCollectionViewLayout : UICollectionViewLayout
 @property (nonatomic,weak) id <PPMessengerCollectionViewLayoutDelegate> delegate;
+@property (nonatomic)BOOL reversed;
 @end

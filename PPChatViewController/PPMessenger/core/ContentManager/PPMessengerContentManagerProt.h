@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PPMessengerContentDisplayObjectProt.h"
 #import "PPMessengerConstructionProt.h"
+#import "PPMLoaderDisplayObjectProt.h"
 @protocol PPMessengerContentManagerDelegate <NSObject>
 
 -(CGSize)ppmcm_getSize;
@@ -30,5 +31,20 @@
 -(id<PPMessengerContentDisplayObjectProt>)ppm_displayObjectAtIndexPath:(NSIndexPath*)ip;
 
 @property (nonatomic)float ppm_totalH;
+
+
+@property (nonatomic,retain)id<PPMessengerContentDisplayGroupProt>  ppm_loaderDisplayGroup;
+@property (nonatomic,retain)id<PPMLoaderDisplayObjectProt>  ppm_loaderObject;
+
+
+-(BOOL)ppm_isLoaderCellSection:(NSInteger)section;
+
+
+@property (nonatomic)NSInteger ppm_currentIndex;
+@property (nonatomic)NSInteger ppm_pageSize;
+
+@property (nonatomic)BOOL ppm_shouldShowLoadCell;
+
+@property (nonatomic)BOOL ppm_reversed;
 
 @end

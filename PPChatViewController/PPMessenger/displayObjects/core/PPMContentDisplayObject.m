@@ -45,10 +45,6 @@
     
     
 }
--(void)ppm_setupGroup:(id<PPMessengerContentDisplayGroupProt>)group{
-    
-    
-}
 -(id<PPMessengerContentDisplayGroupProt>)ppm_generateGroupWithGroupIndex:(NSInteger)groupIndex{
     
     return [[PPMGroup alloc] initWithGroupIndif:[self ppm_groupBy] andGroupIndex:groupIndex];
@@ -63,20 +59,35 @@
     return size;
 }
 
--(UICollectionViewLayoutAttributes*)ppm_calculateInBackgroundOnSize:(CGSize)size withY:(float)y andIndexPath:(NSIndexPath*)indexPath{
+-(UICollectionViewLayoutAttributes*)ppm_calculateInBackgroundOnSize:(CGSize)size withY:(float)y andIndexPath:(NSIndexPath*)indexPath reversed:(BOOL)reversed{
     
 
+//    if (self.ppm_layoutAttributes) {
+//        return self.ppm_layoutAttributes;
+//    }
+    
     CGSize contentSize = [self getAvailableContentSizeOnGlobalSize:size];
     self.ppm_contentSize=[self ppm_calculateContentSizeInBackgroundAvailableOnSize:contentSize];
     
     
     self.ppm_layoutAttributes =  [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:[self ppm_type] withIndexPath:indexPath];
-    self.ppm_layoutAttributes.frame=CGRectMake(
-                                               [self ppm_globalInsets].left,
-                                               [self ppm_globalInsets].top+y,
-                                               self.ppm_contentSize.width+[self ppm_contentInsets].left+[self ppm_contentInsets].right ,
-                                               
-                                               self.ppm_contentSize.height+[self ppm_contentInsets].top+[self ppm_contentInsets].bottom);
+    
+    if (reversed) {
+        self.ppm_layoutAttributes.frame=CGRectMake(
+                                                   [self ppm_globalInsets].left,
+                                                   [self ppm_globalInsets].bottom+y,
+                                                   self.ppm_contentSize.width+[self ppm_contentInsets].left+[self ppm_contentInsets].right ,
+                                                   
+                                                   self.ppm_contentSize.height+[self ppm_contentInsets].top+[self ppm_contentInsets].bottom);
+    }else{
+        self.ppm_layoutAttributes.frame=CGRectMake(
+                                                   [self ppm_globalInsets].left,
+                                                   [self ppm_globalInsets].top+y,
+                                                   self.ppm_contentSize.width+[self ppm_contentInsets].left+[self ppm_contentInsets].right ,
+                                                   
+                                                   self.ppm_contentSize.height+[self ppm_contentInsets].top+[self ppm_contentInsets].bottom);
+    }
+
     
     
     return   self.ppm_layoutAttributes;

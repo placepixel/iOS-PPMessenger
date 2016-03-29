@@ -10,11 +10,23 @@
 
 #import "PPMSenderUsernameDisplayObject.h"
 #import "PPMSenderProfilePictureDisplayObject.h"
+
+#import "PPMessengerTextHelper.h"
+
+#import "PPMMessageTextContentDisplayView.h"
 ////groups
 
 
 
 ////
+
+@interface PPMMessageDisplayObject ()
+
+@property (nonatomic,retain)NSMutableArray* selectionsArray;
+@property (nonatomic,retain)NSMutableAttributedString * attrTextContent;
+
+@end
+
 @implementation PPMMessageDisplayObject
 +(NSArray *)createWithMessages:(NSArray *)messages{
     NSMutableArray * resultArray =[[NSMutableArray alloc] init];
@@ -39,6 +51,21 @@
 
 -(void)ppm_generateDisplayViewClass:(Class*)displayViewClass andIndifiter:(NSString**)indifiter andConfigurateBlock:(PPMessengerContentConfigurationBlock*)configurateBlock{
     
+    
+
+    
+    
+    *indifiter=@"ppm_textmessage_i";
+    *displayViewClass=[PPMMessageTextContentDisplayView class];
+    
+    *configurateBlock=^(PPMMessageTextContentDisplayView * viewToConfigurate){
+        
+        
+        [viewToConfigurate setTextContent:self.attrTextContent];
+        
+        
+    };
+    
 //    displayViewClass=[ppmessa]
     
 }
@@ -48,7 +75,7 @@
 
 -(UIEdgeInsets)ppm_globalInsets{
     
-    return UIEdgeInsetsMake(5, 50, 5, 5);
+    return UIEdgeInsetsMake(0, 50, 5, 5);
 }
 -(UIEdgeInsets)ppm_contentInsets{
     return UIEdgeInsetsMake(10, 10, 10, 10);
@@ -67,20 +94,31 @@
     
     PPMSenderUsernameDisplayObject * senderUsername = [[PPMSenderUsernameDisplayObject alloc] init];
     [senderUsername setSenderUsername:[self.message fromUserUsername]];
-    [group addItemToGroup:senderUsername];
+   
+    [group setPpm_header:senderUsername];
     
     return group;
     
 }
 -(NSString *)ppm_groupBy{
-    return [self.message textContent];
+    return [self.message fromUserUserId];
 }
 
 #pragma mark else
 
 -(CGSize)ppm_calculateContentSizeInBackgroundAvailableOnSize:(CGSize)size{
     
-    CGSize r =CGSizeMake(size.width-arc4random()%30, 100-arc4random()%40);
+    
+    
+    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc] initWithString:[self.message textContent] attributes:@{NSForegroundColorAttributeName:[self textColor],NSFontAttributeName:[self textFont]}];
+    self.selectionsArray=[[NSMutableArray alloc] init];
+    
+      [self.selectionsArray addObjectsFromArray:[attrStr ppm_findAndSelect:@"@" color:[self soemthingColor] font:[self soemthingFont] removeFinder:NO]];
+      [self.selectionsArray addObjectsFromArray:[attrStr ppm_findAndSelect:@"#" color:[self soemthingColor] font:[self soemthingFont] removeFinder:NO]];
+      [self.selectionsArray addObjectsFromArray:[attrStr ppm_findAndSelect:@"http" color:[self soemthingColor] font:[self soemthingFont] removeFinder:NO]];
+  
+    self.attrTextContent=attrStr;
+    CGSize r =[attrStr ppm_sizeOfStringWithAvailableSize:size];
     return r;
     
 }
@@ -90,4 +128,25 @@
     return [self.message isSendedFromCurrentUser]?PPMessengerCurrentUserBubble:PPMessengerOtherUserBubble;
 }
 
+
+#pragma mark - ui stuf
+
+-(UIColor*)textColor{
+    
+    return [UIColor blackColor];
+    
+}
+-(UIFont*)textFont{
+    
+    return [UIFont systemFontOfSize:15];
+    
+}
+-(UIFont*)soemthingFont{
+    
+    return [UIFont boldSystemFontOfSize:15];
+}
+-(UIColor*)soemthingColor{
+    
+    return [UIColor blueColor];
+}
 @end

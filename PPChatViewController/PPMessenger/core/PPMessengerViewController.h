@@ -33,6 +33,11 @@
 @property (nonatomic,retain)PPMessengerCollectionViewLayout * contentViewLayout;
 @property (nonatomic,retain)UIView<PPMessengerInputAccessoryViewProt> * inputAccessoryView;
 @property (nonatomic)BOOL keyboardIsVisible;
+@property (nonatomic)BOOL reversed;
+
+
+
+
 
 
 

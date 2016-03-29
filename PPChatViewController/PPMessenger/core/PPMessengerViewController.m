@@ -25,6 +25,8 @@
 
 #import "PPMessengerInputAccessoryView.h"
 
+
+#import "TESTView.h"
 ////
 @interface PPMessengerViewController () <_PPMessengerFakeInputAccessoryViewDelegate,PPMessengerContentManagerDelegate,PPMessengerCollectionViewLayoutDelegate,PPMessengerInputAccessoryViewDelegate>
 @property (nonatomic,retain)_PPMessengerFakeInputAccessoryView * _fakeInputView;
@@ -57,8 +59,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+//    self.reversed=YES;
+    [self loadCurrentPage];
     
     
+
 //    ////
 //    [self ppm_registerContructor:[[PPMOtherUserBubbleConstructor alloc] init]];
 //    [self ppm_registerContructor:[[PPMCurrentUserBubbleConstructor alloc] init]];
@@ -74,16 +80,26 @@
 //    
     
     ////
-    [self.contentProvider ppm_loadItems:0 limit:10 fromTopToBot:[self.contentProvider ppm_shouldBeInitialTopOriented] complitBlock:^(NSArray<PPMessengerContentDisplayObjectProt> *newItems) {
+
+    // Do any additional setup after loading the view.
+}
+
+-(void)loadCurrentPage{
+    [self.contentProvider ppm_loadItems:[self.contentManager ppm_currentIndex] limit:self.contentManager.ppm_pageSize fromTopToBot:!self.reversed complitBlock:^(NSArray<PPMessengerContentDisplayObjectProt> *newItems) {
         
+//        [self.contentView.collectionViewLayout invalidateLayout];
         [self.contentManager workWithNewItems:newItems complititionBlock:^(NSArray *result) {
-                  [self.contentView reloadData];
+            
+            
+//            [self.contentView.collectionViewLayout invalidateLayout];
+//            self.contentManager.ppm_currentPage+=self.ppm_pageSize;
+//           [self.contentView.collectionViewLayout invalidateLayout];
+            [self.contentView reloadData];
             
         }];
         
         
     }];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,6 +133,11 @@
 -(void)ppmiav_accessoryView:(PPMessengerInputAccessoryView *)inputAccessoryView wantsToSendText:(NSString *)text shouldClean:(BOOL *)shouldClean shouldResingResponder:(BOOL *)resignResponder{
     
     
+    
+    
+    
+  
+    
     *resignResponder=YES;
     *shouldClean=YES;
     
@@ -128,12 +149,10 @@
 #pragma mark - UICollectionViewDataSource
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"sizeForItemAtIndexPath");
     return CGSizeZero;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-     NSLog(@"numberOfItemsInSection");
     return [[self contentManager] ppm_numberItemsInGroupAtIndex:section];
 }
 
@@ -141,12 +160,9 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
-    
-    
-    NSLog(@"viewForSupplementaryElementOfKind");
     id<PPMessengerContentDisplayObjectProt> disp = [self.contentManager ppm_displayObjectAtIndexPath:indexPath];
     
-    
+     float sc = self.reversed?-1.0:1.0;
     Class cl;
     PPMessengerContentConfigurationBlock configBlock;
     NSString * indif;
@@ -159,6 +175,8 @@
         }
         UICollectionReusableView<PPMessengerReusableViewProt> * rv = ( UICollectionReusableView<PPMessengerReusableViewProt> *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kind forIndexPath:indexPath];
         
+        
+                 rv.transform=CGAffineTransformMakeScale(1.0, sc);
         return rv;
     }else{
         
@@ -185,15 +203,13 @@
             configBlock(rv.displayView);
         }
         
+          rv.transform=CGAffineTransformMakeScale(1.0, sc);
         return rv;
 
     }
     
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSLog(@"cellForItemAtIndexPath");
-    
     
     UICollectionViewCell<PPMessengerReusableViewProt> * cell =  (UICollectionViewCell<PPMessengerReusableViewProt>*)[collectionView dequeueReusableCellWithReuseIdentifier:@"ppm_bubble" forIndexPath:indexPath];
     
@@ -205,11 +221,26 @@
 
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    NSLog(@"numberOfSectionsInCollectionView");
     return [[self contentManager] ppm_numberOfGroups];
 }
 #pragma mark - UICollectionViewDelegate
 
+-(void)collectionView:(UICollectionView *)collectionView willDisplaySupplementaryView:(UICollectionReusableView *)view forElementKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath{
+    
+    
+   
+    if ([self.contentManager ppm_isLoaderCellSection:indexPath.section]) {
+        
+        if ([[self.contentManager ppm_loaderObject] ppm_loadState]!=PPMLoaderDisplayObjectStateLoading) {
+            
+            [[self.contentManager ppm_loaderObject] setPpm_loadState:PPMLoaderDisplayObjectStateLoading];
+            [self loadCurrentPage];
+            
+        }
+
+    }
+    
+}
 
 #pragma mark - PPMessengerCollectionViewLayoutDelegate
 -(CGSize)ppml_getContentSize{
@@ -262,6 +293,32 @@
         NSLog(@"%@",NSStringFromCGRect (realRect));
 
 //    [self.view setNeedsLayout];
+    
+}
+
+#pragma mark - setters
+
+-(void)setReversed:(BOOL)reversed{
+    if (reversed==_reversed) {
+        return;
+    }
+    _reversed=reversed;
+    [self.contentViewLayout setReversed:reversed];
+    float sc = _reversed?-1.0:1.0;
+    [self.contentManager setPpm_reversed:reversed];
+    [self.contentView.collectionViewLayout invalidateLayout];
+    [self.contentView reloadData];
+    self.contentView.transform=CGAffineTransformMakeScale(1.0, sc);
+    
+    [self loadCurrentPage];
+}
+#pragma mark - kb relativ
+-(void)setKeyboardIsVisible:(BOOL)keyboardIsVisible{
+    _keyboardIsVisible=keyboardIsVisible;
+    if (!self.reversed&&keyboardIsVisible  ) {
+        self.reversed=YES;
+    }
+
     
 }
 #pragma makr - keyboard observing

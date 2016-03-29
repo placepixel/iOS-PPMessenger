@@ -28,4 +28,7 @@ typedef NS_ENUM (NSInteger , PPMMessageMediaType){
 -(NSDate*)createdAt;
 
 -(BOOL)isSendedFromCurrentUser;
+
+- (NSComparisonResult)dateDscCompare:(id<PPMMessageProt>)otherMessage;
+-(NSComparisonResult)dateAscCompare:(id<PPMMessageProt>)otherMessage;
 @end

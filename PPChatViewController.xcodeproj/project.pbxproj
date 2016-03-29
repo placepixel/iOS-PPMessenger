@@ -30,6 +30,11 @@
 		B88ADAB41CA795F9003ADDDA /* PPMSenderProfilePictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = B88ADAA11CA795F9003ADDDA /* PPMSenderProfilePictureView.m */; };
 		B88ADAB51CA795F9003ADDDA /* PPMSenderUsernameDisplayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B88ADAA41CA795F9003ADDDA /* PPMSenderUsernameDisplayObject.m */; };
 		B88ADAB61CA795F9003ADDDA /* PPMSenderUsernameDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B88ADAA61CA795F9003ADDDA /* PPMSenderUsernameDisplayView.m */; };
+		B88ADABA1CA96EE1003ADDDA /* PPMLoaderDisplayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B88ADAB91CA96EE1003ADDDA /* PPMLoaderDisplayObject.m */; };
+		B88ADABD1CA96EFD003ADDDA /* PPMLoaderDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B88ADABC1CA96EFD003ADDDA /* PPMLoaderDisplayView.m */; };
+		B88B7A621CA995DE00AF3AD9 /* PPMessengerTextHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B7A611CA995DE00AF3AD9 /* PPMessengerTextHelper.m */; };
+		B88B7A741CA9A77E00AF3AD9 /* PPMMessageTextContentDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B7A731CA9A77E00AF3AD9 /* PPMMessageTextContentDisplayView.m */; };
+		B88B7A771CA9F2BF00AF3AD9 /* TESTView.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B7A761CA9F2BF00AF3AD9 /* TESTView.m */; };
 		B89251011CA5BD1600F4B81B /* PPMUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = B89251001CA5BD1600F4B81B /* PPMUserData.m */; };
 		B89251111CA6015E00F4B81B /* PPMessengerContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B892510B1CA6015E00F4B81B /* PPMessengerContentProvider.m */; };
 /* End PBXBuildFile section */
@@ -89,6 +94,17 @@
 		B88ADAA41CA795F9003ADDDA /* PPMSenderUsernameDisplayObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMSenderUsernameDisplayObject.m; sourceTree = "<group>"; };
 		B88ADAA51CA795F9003ADDDA /* PPMSenderUsernameDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMSenderUsernameDisplayView.h; sourceTree = "<group>"; };
 		B88ADAA61CA795F9003ADDDA /* PPMSenderUsernameDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMSenderUsernameDisplayView.m; sourceTree = "<group>"; };
+		B88ADAB81CA96EE1003ADDDA /* PPMLoaderDisplayObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMLoaderDisplayObject.h; sourceTree = "<group>"; };
+		B88ADAB91CA96EE1003ADDDA /* PPMLoaderDisplayObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMLoaderDisplayObject.m; sourceTree = "<group>"; };
+		B88ADABB1CA96EFD003ADDDA /* PPMLoaderDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMLoaderDisplayView.h; sourceTree = "<group>"; };
+		B88ADABC1CA96EFD003ADDDA /* PPMLoaderDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMLoaderDisplayView.m; sourceTree = "<group>"; };
+		B88ADABE1CA98078003ADDDA /* PPMLoaderDisplayObjectProt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMLoaderDisplayObjectProt.h; sourceTree = "<group>"; };
+		B88B7A601CA995DE00AF3AD9 /* PPMessengerTextHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMessengerTextHelper.h; sourceTree = "<group>"; };
+		B88B7A611CA995DE00AF3AD9 /* PPMessengerTextHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMessengerTextHelper.m; sourceTree = "<group>"; };
+		B88B7A721CA9A77E00AF3AD9 /* PPMMessageTextContentDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMMessageTextContentDisplayView.h; sourceTree = "<group>"; };
+		B88B7A731CA9A77E00AF3AD9 /* PPMMessageTextContentDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMMessageTextContentDisplayView.m; sourceTree = "<group>"; };
+		B88B7A751CA9F2BF00AF3AD9 /* TESTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESTView.h; sourceTree = "<group>"; };
+		B88B7A761CA9F2BF00AF3AD9 /* TESTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESTView.m; sourceTree = "<group>"; };
 		B89250FF1CA5BD1600F4B81B /* PPMUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMUserData.h; sourceTree = "<group>"; };
 		B89251001CA5BD1600F4B81B /* PPMUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMUserData.m; sourceTree = "<group>"; };
 		B892510A1CA6015E00F4B81B /* PPMessengerContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMessengerContentProvider.h; sourceTree = "<group>"; };
@@ -173,6 +189,7 @@
 		B88ADA6F1CA795F9003ADDDA /* PPMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				B88B7A5B1CA995AF00AF3AD9 /* Helpers */,
 				B88ADA711CA795F9003ADDDA /* ContentView */,
 				B88ADA761CA795F9003ADDDA /* Core */,
 				B88ADA891CA795F9003ADDDA /* DataModels */,
@@ -202,6 +219,8 @@
 				B88ADA861CA795F9003ADDDA /* PPMessengerDefaults.m */,
 				B88ADA871CA795F9003ADDDA /* PPMessengerViewController.h */,
 				B88ADA881CA795F9003ADDDA /* PPMessengerViewController.m */,
+				B88B7A751CA9F2BF00AF3AD9 /* TESTView.h */,
+				B88B7A761CA9F2BF00AF3AD9 /* TESTView.m */,
 			);
 			name = Core;
 			path = core;
@@ -260,6 +279,7 @@
 		B88ADA8E1CA795F9003ADDDA /* DisplayObjects */ = {
 			isa = PBXGroup;
 			children = (
+				B88ADAB71CA96E3D003ADDDA /* Loader */,
 				B88ADA8F1CA795F9003ADDDA /* core */,
 				B88ADA9A1CA795F9003ADDDA /* Message */,
 			);
@@ -274,6 +294,7 @@
 				B88ADA911CA795F9003ADDDA /* PPMContentDisplayObject.m */,
 				B88ADA921CA795F9003ADDDA /* PPMessengerConstructionProt.h */,
 				B88ADA931CA795F9003ADDDA /* PPMessengerContentDisplayObjectProt.h */,
+				B88ADABE1CA98078003ADDDA /* PPMLoaderDisplayObjectProt.h */,
 				B88ADA941CA795F9003ADDDA /* PPMGroup.h */,
 				B88ADA951CA795F9003ADDDA /* PPMGroup.m */,
 				B88ADA961CA795F9003ADDDA /* view */,
@@ -296,6 +317,8 @@
 			children = (
 				B88ADA9B1CA795F9003ADDDA /* PPMMessageDisplayObject.h */,
 				B88ADA9C1CA795F9003ADDDA /* PPMMessageDisplayObject.m */,
+				B88B7A721CA9A77E00AF3AD9 /* PPMMessageTextContentDisplayView.h */,
+				B88B7A731CA9A77E00AF3AD9 /* PPMMessageTextContentDisplayView.m */,
 				B88ADA9D1CA795F9003ADDDA /* SenderProfilePicture */,
 				B88ADAA21CA795F9003ADDDA /* SenderUsername */,
 			);
@@ -322,6 +345,34 @@
 				B88ADAA61CA795F9003ADDDA /* PPMSenderUsernameDisplayView.m */,
 			);
 			path = SenderUsername;
+			sourceTree = "<group>";
+		};
+		B88ADAB71CA96E3D003ADDDA /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				B88ADAB81CA96EE1003ADDDA /* PPMLoaderDisplayObject.h */,
+				B88ADAB91CA96EE1003ADDDA /* PPMLoaderDisplayObject.m */,
+				B88ADABB1CA96EFD003ADDDA /* PPMLoaderDisplayView.h */,
+				B88ADABC1CA96EFD003ADDDA /* PPMLoaderDisplayView.m */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		B88B7A5B1CA995AF00AF3AD9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B88B7A5F1CA995DE00AF3AD9 /* text */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B88B7A5F1CA995DE00AF3AD9 /* text */ = {
+			isa = PBXGroup;
+			children = (
+				B88B7A601CA995DE00AF3AD9 /* PPMessengerTextHelper.h */,
+				B88B7A611CA995DE00AF3AD9 /* PPMessengerTextHelper.m */,
+			);
+			path = text;
 			sourceTree = "<group>";
 		};
 		B89251091CA6015E00F4B81B /* BaseRealization */ = {
@@ -455,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B88ADAB61CA795F9003ADDDA /* PPMSenderUsernameDisplayView.m in Sources */,
+				B88ADABD1CA96EFD003ADDDA /* PPMLoaderDisplayView.m in Sources */,
 				B837CF9E1CA1F04F0052D92F /* ViewController.m in Sources */,
 				B88ADAB31CA795F9003ADDDA /* PPMSenderProfilePictureDisplayObject.m in Sources */,
 				B837CF9B1CA1F04F0052D92F /* AppDelegate.m in Sources */,
@@ -463,17 +515,21 @@
 				B89251011CA5BD1600F4B81B /* PPMUserData.m in Sources */,
 				B88ADAAB1CA795F9003ADDDA /* PPMessengerInputAccessoryView.m in Sources */,
 				B88ADAA71CA795F9003ADDDA /* PPMessengerCollectionView.m in Sources */,
+				B88B7A771CA9F2BF00AF3AD9 /* TESTView.m in Sources */,
 				B88ADAB11CA795F9003ADDDA /* PPMReusableView.m in Sources */,
 				B88ADAAF1CA795F9003ADDDA /* PPMContentDisplayObject.m in Sources */,
 				B88ADAA91CA795F9003ADDDA /* PPMessengerContentManager.m in Sources */,
 				B88ADAA81CA795F9003ADDDA /* PPMessengerCollectionViewLayout.m in Sources */,
 				B88ADAAA1CA795F9003ADDDA /* _PPMessengerFakeInputAccessoryView.m in Sources */,
 				B88ADAAE1CA795F9003ADDDA /* PPMMessage.m in Sources */,
+				B88B7A621CA995DE00AF3AD9 /* PPMessengerTextHelper.m in Sources */,
 				B88ADAAD1CA795F9003ADDDA /* PPMessengerViewController.m in Sources */,
 				B89251111CA6015E00F4B81B /* PPMessengerContentProvider.m in Sources */,
 				B88ADAB51CA795F9003ADDDA /* PPMSenderUsernameDisplayObject.m in Sources */,
+				B88ADABA1CA96EE1003ADDDA /* PPMLoaderDisplayObject.m in Sources */,
 				B88ADAB41CA795F9003ADDDA /* PPMSenderProfilePictureView.m in Sources */,
 				B88ADAB21CA795F9003ADDDA /* PPMMessageDisplayObject.m in Sources */,
+				B88B7A741CA9A77E00AF3AD9 /* PPMMessageTextContentDisplayView.m in Sources */,
 				B88ADAB01CA795F9003ADDDA /* PPMGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

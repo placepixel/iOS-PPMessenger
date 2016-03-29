@@ -13,6 +13,7 @@ typedef NS_ENUM(NSInteger,PPMDisplayLayoutType){
     
     PPMDisplayLayoutTypeDefault,
     PPMDisplayLayoutTypeHeader,
+    PPMDisplayLayoutTypeAlwaysOnTop,
 };
 @protocol PPMessengerConstructionProt <NSObject>
 

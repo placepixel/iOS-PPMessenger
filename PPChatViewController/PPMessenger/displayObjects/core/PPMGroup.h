@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "PPMessengerContentDisplayObjectProt.h"
 @interface PPMGroup : NSObject <PPMessengerContentDisplayGroupProt>
+
+
 @property (nonatomic,retain)NSMutableArray <PPMessengerContentDisplayObjectProt>*ppm_items;
 @property (nonatomic,retain)NSMutableArray <PPMessengerContentDisplayObjectProt>*ppm_dynamic_items;
 @end

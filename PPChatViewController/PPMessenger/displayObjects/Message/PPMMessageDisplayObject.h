@@ -13,4 +13,6 @@
 -(instancetype)initWithMessage:(id<PPMMessageProt>)message;
 
 @property (nonatomic,retain)id<PPMMessageProt>message;
+
+
 @end

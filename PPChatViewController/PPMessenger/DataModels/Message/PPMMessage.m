@@ -27,7 +27,15 @@
 }
 
 +(NSArray *)createWithDataArray:(NSArray *)dataArray{
-    return [self mj_objectArrayWithKeyValuesArray:dataArray];
+    
+    NSMutableArray * resuktArr =[[NSMutableArray alloc] init];
+    
+    
+    for (NSDictionary * d  in dataArray) {
+        [resuktArr addObject:[self createWithData:d]];
+    }
+    
+    return resuktArr;
     
 }
 
@@ -53,13 +61,21 @@
 
 -(NSDictionary *)dictionaryRepresentation{
     
-    
+;
     NSMutableDictionary *  d=  [self mj_keyValues];
-    [d setValue:@([[self createdAt] timeIntervalSince1970]) forKey:@".priority"];
-    [d setValue:@([self.createdAt timeIntervalSince1970]) forKey:@"createdAt"];
+    [d setValue:    @([@([self.createdAt timeIntervalSince1970]) integerValue]) forKey:@".priority"];
+    [d setValue:    @([@([self.createdAt timeIntervalSince1970]) integerValue]) forKey:@"createdAt"];
     return d;
 }
 -(BOOL)isSendedFromCurrentUser{
     return NO;
+}
+
+- (NSComparisonResult)dateDscCompare:(id<PPMMessageProt>)otherMessage{
+     return [[self createdAt] compare:otherMessage.createdAt];
+   
+}
+- (NSComparisonResult)dateAscCompare:(id<PPMMessageProt>)otherMessage{
+  return [[otherMessage createdAt] compare:self.createdAt];
 }
 @end

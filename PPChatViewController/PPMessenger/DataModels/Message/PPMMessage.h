@@ -26,4 +26,7 @@
 @property (nonatomic,retain)NSString * mediaContentUrlStr;
 @property (nonatomic,retain)NSDate* createdAt;
 
+
+
+
 @end

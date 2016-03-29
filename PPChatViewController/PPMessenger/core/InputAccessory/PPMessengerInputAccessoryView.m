@@ -5,7 +5,7 @@
 //  Created by Alex Padalko on 3/23/16.
 //  Copyright © 2016 PlacePixel. All rights reserved.
 //
-
+#import "TESTView.h"
 #import "PPMessengerInputAccessoryView.h"
 @interface PPMessengerInputAccessoryView ()
 
@@ -104,6 +104,21 @@
         [self.ppm_inputTextView resignFirstResponder];
     }
     
+    
+//    
+//    [self.ppm_inputTextView resignFirstResponder];
+//    
+//    
+////    TESTView * v =[[TESTView alloc] init];
+////    
+////    [v setBackgroundColor:[UIColor yellowColor]];
+////    [v setFrame:CGRectMake(0, 0, 320, 320)];
+////    
+////    
+////    [self.ppm_inputTextView setInputView:v];
+////    [self.ppm_inputTextView setInputAccessoryView:[[UIView alloc] init]];
+////    
+////    [self.ppm_inputTextView becomeFirstResponder];
 }
 
 #pragma mark -

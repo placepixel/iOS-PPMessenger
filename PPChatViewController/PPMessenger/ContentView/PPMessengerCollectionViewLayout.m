@@ -26,7 +26,7 @@
     for (id<PPMessengerContentDisplayGroupProt> group in arr) {
         if (CGRectIntersectsRect([group ppm_groupFrame], visibleRect)) {
             
-            [group ppm_updateGroupWithOffset:self.collectionView.contentOffset.y];
+            [group ppm_updateGroupWithOffset:self.collectionView reversed:self.reversed];
             [self.layouts addObjectsFromArray:[group ppm_getAllLayouts]];
         }
     }
