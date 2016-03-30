@@ -1,0 +1,20 @@
+source 'https://github.com/placepixel/iOS-PPMediaPicker.git'
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'PPMessenger_Example', :exclusive => true do
+  pod 'PPMessenger', :path => '../'
+  
+  pod 'Firebase', '>= 2.5.0'
+  pod 'MJExtension'
+end
+
+target 'PPMessenger_Tests', :exclusive => true do
+  pod 'PPMessenger', :path => '../'
+  pod 'Firebase', '>= 2.5.0'
+  pod 'MJExtension'
+  pod 'Specta'
+  pod 'Expecta'
+  pod 'FBSnapshotTestCase'
+  pod 'Expecta+Snapshots'
+end

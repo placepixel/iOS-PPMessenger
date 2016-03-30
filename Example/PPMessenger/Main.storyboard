@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="wQg-tq-qST">
+            <objects>
+                <viewController id="whP-gf-Uak" customClass="PPViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ikN-nZ-U3x"/>
+                        <viewControllerLayoutGuide type="bottom" id="2am-dv-rZN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1QK-KV-Mfo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jzw-I6-Ax7">
+                                <rect key="frame" x="20" y="159" width="560" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ijP-hQ-v1C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGQ-rn-TLy">
+                                <rect key="frame" x="200" y="226" width="200" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Bsm-wM-qI5"/>
+                                    <constraint firstAttribute="height" constant="64" id="hwO-h0-hbt"/>
+                                </constraints>
+                                <state key="normal" title="Start Chat"/>
+                                <connections>
+                                    <action selector="onStartChat:" destination="whP-gf-Uak" eventType="touchUpInside" id="Rku-G0-yTo"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wVT-tN-soZ">
+                                <rect key="frame" x="240" y="31" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="d6a-hP-fNC"/>
+                                    <constraint firstAttribute="height" constant="120" id="lax-Pp-PEs"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jzw-I6-Ax7" firstAttribute="leading" secondItem="1QK-KV-Mfo" secondAttribute="leading" constant="20" id="NXc-pH-kNP"/>
+                            <constraint firstAttribute="trailing" secondItem="jzw-I6-Ax7" secondAttribute="trailing" constant="20" id="QWt-be-rdq"/>
+                            <constraint firstItem="wVT-tN-soZ" firstAttribute="centerX" secondItem="1QK-KV-Mfo" secondAttribute="centerX" id="SS2-vf-hN5"/>
+                            <constraint firstItem="wVT-tN-soZ" firstAttribute="top" secondItem="ikN-nZ-U3x" secondAttribute="bottom" constant="11" id="Uie-gV-G9Z"/>
+                            <constraint firstItem="jzw-I6-Ax7" firstAttribute="top" secondItem="wVT-tN-soZ" secondAttribute="bottom" constant="8" id="Z8N-9q-g2N"/>
+                            <constraint firstItem="oGQ-rn-TLy" firstAttribute="top" secondItem="jzw-I6-Ax7" secondAttribute="bottom" constant="23" id="rbe-MC-uxN"/>
+                            <constraint firstItem="oGQ-rn-TLy" firstAttribute="centerX" secondItem="1QK-KV-Mfo" secondAttribute="centerX" id="vYR-nd-G7G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="profilePicture" destination="wVT-tN-soZ" id="RCZ-oz-1Ct"/>
+                        <outlet property="startChatButton" destination="oGQ-rn-TLy" id="auE-Ri-Mfc"/>
+                        <outlet property="usernameTextField" destination="jzw-I6-Ax7" id="Cnc-I5-9xM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="433"/>
+        </scene>
+    </scenes>
+</document>

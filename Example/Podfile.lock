@@ -1,0 +1,52 @@
+PODS:
+  - Expecta (1.0.5)
+  - Expecta+Snapshots (2.0.0):
+    - Expecta (~> 1.0)
+    - FBSnapshotTestCase/Core (~> 2.0.3)
+  - FBSnapshotTestCase (2.0.7):
+    - FBSnapshotTestCase/SwiftSupport (= 2.0.7)
+  - FBSnapshotTestCase/Core (2.0.7)
+  - FBSnapshotTestCase/SwiftSupport (2.0.7):
+    - FBSnapshotTestCase/Core
+  - Firebase (2.5.1)
+  - MJExtension (3.0.10)
+  - PBJVideoPlayer (0.3.0)
+  - PPMediaPicker (0.1.0):
+    - PBJVideoPlayer
+    - VMaskTextField
+  - PPMessenger (0.1.0):
+    - PPMediaPicker
+    - SDWebImage (~> 3.6)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - Specta (1.0.5)
+  - VMaskTextField (1.0.8)
+
+DEPENDENCIES:
+  - Expecta
+  - Expecta+Snapshots
+  - FBSnapshotTestCase
+  - Firebase (>= 2.5.0)
+  - MJExtension
+  - PPMessenger (from `../`)
+  - Specta
+
+EXTERNAL SOURCES:
+  PPMessenger:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
+  Expecta+Snapshots: 29b38dd695bc72a0ed2bea833937d78df41943ba
+  FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
+  Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
+  MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
+  PBJVideoPlayer: 1024ec3e90802459e28fac3d822f03719e100d34
+  PPMediaPicker: 1e3195971768e17646d6a816c2e93bc714af4447
+  PPMessenger: c75ebc81538c578e8286320f722141b83cbd7ea2
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
+  VMaskTextField: e77fe33633f999c5c38e70bed0afece0625624a4
+
+COCOAPODS: 0.39.0
